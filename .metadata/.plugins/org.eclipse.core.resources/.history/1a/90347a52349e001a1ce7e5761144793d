@@ -1,0 +1,10 @@
+spring.application.name=ZuulProxyMicroservice
+server.port=8089
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+
+zuul.routes.employee.url=http://localhost:8081/employee
+zuul.routes.company.url=http://localhost:8082/company
+
+

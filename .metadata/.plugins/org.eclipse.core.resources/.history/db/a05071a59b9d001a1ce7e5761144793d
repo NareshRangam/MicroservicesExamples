@@ -1,0 +1,20 @@
+package com.ss.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController("/company")
+public class CompanyController {
+	public String getCompanyEmployees()
+	{
+		RestTemplate restTemplate = new RestTemplate();
+	     
+	    HttpHeaders headers = new HttpHeaders();
+	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+	    HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
+	     
+	    ResponseEntity<String> result = restTemplate.exchange(uri, HttpMethod.GET, entity, String.class);
+	     
+	    System.out.println(result);
+	}
+
+}
